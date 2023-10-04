@@ -4,11 +4,13 @@
  */
 package com.umariana.expocanina;
 
+import java.io.Serializable;
+
 /**
  *
  * @author PC
  */
-public class Perro {
+public class Perro implements Serializable{
     
     private String nombre;
     private String raza;
