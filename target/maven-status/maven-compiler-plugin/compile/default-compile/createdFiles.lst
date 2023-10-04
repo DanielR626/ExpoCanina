@@ -1,5 +1,5 @@
-servlets\SvPerros.class
-com\umariana\expocanina\Perro.class
-com\umariana\expocanina\JAXRSConfiguration.class
-com\umariana\expocanina\resources\JavaEE8Resource.class
-com\umariana\expocanina\exposicion.class
+com\mycompany\expoc\JAXRSConfiguration.class
+com\mycompany\expoc\Serializacion.class
+com\mycompany\expoc\resources\JavaEE8Resource.class
+Servlets\SvExpCanina.class
+com\mycompany\expoc\Perro.class
