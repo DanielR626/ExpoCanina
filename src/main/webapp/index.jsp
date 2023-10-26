@@ -1,3 +1,4 @@
+
 <%@page import="com.mycompany.expoc.Serializacion"%>
 <%@page import="com.mycompany.expoc.Perro"%>
 <%@page import="java.util.ArrayList"%>
@@ -260,9 +261,41 @@
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-danger" onclick="eliminarPerroPorNombre()">Eliminar</button>
+            <button type="button" class="btn btn-danger" id="eliminarCanino" data-perroEliminar="<" >Eliminar</button>
          </div>
       </div>
    </div>
 </div>
+
+
+    Esta linea cololocarla donde esta la biblioteca de boostrap
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+Ubicarla al final de la pagina index.jsp
+<script>
+    
+    // funcion para mostrar los datos en la ventana modal
+  $('#eliminarCanino').onClink(), function (event) {
+    var button = $(event.relatedTarget); // Botón que desencadenó el evento
+    var nombre = button.data('nombre'); // Obtén el nombre del perro
+
+    // Realiza una solicitud AJAX al servlet para obtener los detalles del perro por su nombre
+    $.ajax({
+      url: 'SvPerro?nombre=' + nombre, // Cambia 'id' por el nombre del parámetro que esperas en tu servlet
+      method: 'GET',
+      success: function (data) {
+        // Actualiza el contenido del modal con los detalles del perro
+        $('#perro-details').html(data);
+      },
+      error: function () {
+        // Maneja errores aquí si es necesario
+        console.log('Error al cargar los detalles del perro.');
+      }
+    });
+  });
+
+</script>
+
+
 
